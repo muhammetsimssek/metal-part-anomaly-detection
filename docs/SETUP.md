@@ -2,11 +2,11 @@
 
 [Project overview](../README.md) · [Türkçe açıklama](../README_TR.md)
 
-These are the original experimental scripts. The instructions below describe their expected inputs and code paths; a fresh installation and full model inference have not been rerun for this publication. Dependency versions from the historical runs were not recorded, so `requirements.txt` is a dependency list rather than a validated lockfile.
+The following CPU setup was validated in a clean Windows x64 virtual environment with Python 3.12.14. Both pretrained models completed reference-memory construction and inference on a two-reference/two-test integration subset. See [VALIDATION.md](VALIDATION.md) for the exact scope. Package versions are pinned in `requirements-lock.txt`; the original historical environment is unknown.
 
 ## 1. Create an isolated Python environment
 
-Use a Python version supported by the current [PyTorch installer](https://pytorch.org/get-started/locally/). Install a matching `torch` and `torchvision` pair using its instructions, then install the remaining dependencies.
+Use Python 3.12 for the validated environment. The lockfile installs the matching CPU PyTorch/TorchVision pair and all remaining packages. For a different Python/CUDA configuration consult the [PyTorch installer](https://pytorch.org/get-started/locally/); that configuration is outside this validation.
 
 ```powershell
 git clone https://github.com/muhammetsimssek/metal-part-anomaly-detection.git
@@ -41,7 +41,7 @@ The factory's full reference/test dataset and inspection booklet are intentional
 .venv\Scripts\python.exe run.py dinov2
 ```
 
-Run either command separately to compare approaches. Initial execution needs internet access: TorchVision downloads pretrained WideResNet50-2 weights; DINOv2 is loaded from the official `facebookresearch/dinov2` PyTorch Hub repository and downloads its weights. The Hub source is not commit-pinned in the original experiment.
+Run either command separately to compare approaches. Initial execution needs internet access: TorchVision downloads pretrained WideResNet50-2 weights; DINOv2 is loaded from the official `facebookresearch/dinov2` PyTorch Hub repository and downloads its weights. The published DINOv2 script pins the Hub source to commit `7764ea0f912e53c92e82eb78a2a1631e92725fc8`.
 
 | Script | Output directory | Filename prefix |
 |---|---|---|
@@ -61,4 +61,4 @@ The suffix `_22` is a historical directory name, not a restriction on input coun
 
 ## Türkçe kısa kullanım
 
-Depoyu klonlayın, sanal ortam oluşturup bağımlılıkları yükleyin. Kendi sağlam referans fotoğraflarınızı `train_data`, incelenecek fotoğraflarınızı `test_data` klasörüne koyun. Depo kökünden `python run.py full-memory` veya `python run.py dinov2` komutunu kullanın. Çıktılar `artifacts` altında oluşur; aynı isimli eski çıktılar üzerine yazılır. Hazır veri seti ve model ağırlıkları depoya dahil değildir. Temiz ortamda yeniden çıkarım bu yayımlama aşamasında denenmemiştir.
+Depoyu klonlayın, sanal ortam oluşturup bağımlılıkları yükleyin. Kendi sağlam referans fotoğraflarınızı `train_data`, incelenecek fotoğraflarınızı `test_data` klasörüne koyun. Depo kökünden `python run.py full-memory` veya `python run.py dinov2` komutunu kullanın. Çıktılar `artifacts` altında oluşur; aynı isimli eski çıktılar üzerine yazılır. Hazır veri seti ve model ağırlıkları depoya dahil değildir. Python 3.12/Windows/CPU temiz ortamında iki referans ve iki test fotoğrafıyla çıkarım doğrulandı; kapsam `VALIDATION.md` dosyasında açıklanır.

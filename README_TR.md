@@ -30,7 +30,7 @@ python run.py full-memory
 python run.py dinov2
 ```
 
-Başlatıcı eksik veya boş veri klasörlerini model yüklemeden kontrol eder. İki deney scripti de CPU üzerinde çalışır; ilk kullanımda hazır modeller indirilir. Referans özellik belleği yüksek RAM kullanabilir. Geçmiş bağımlılık sürümleri kaydedilmedi; bu yayımlama sırasında temiz ortamda tam çıkarım yeniden doğrulanmadı.
+Başlatıcı eksik veya boş veri klasörlerini model yüklemeden kontrol eder. İki deney scripti de CPU üzerinde çalışır; ilk kullanımda hazır modeller indirilir. Referans özellik belleği yüksek RAM kullanabilir. Bağımlılık sürümleri `requirements-lock.txt` dosyasında sabitlendi. İki hazır model, küçük bir özel görüntü alt kümesiyle temiz ortamda CPU üzerinde çalıştırıldı; [doğrulama ayrıntılarına](docs/VALIDATION.md) bakabilirsiniz. Geçmiş deneylerin paket sürümleri bilinmiyor.
 
 ## Sonuç ve kapsam
 
@@ -46,6 +46,7 @@ Skor kusur olasılığı veya başarı yüzdesi değildir. İki yöntemin skor �
 - `assets/`: seçilmiş kayıtlı karşılaştırmalar.
 - `docs/`: kurulum, yöntem açıklaması ve PDF sunum.
 - `run.py`: veri kontrolü ve deney başlatma.
+- `requirements-lock.txt`: doğrulanan paket sürümleri.
 - `.github/workflows/`: kaynak sözdizimi ve belge bağlantısı kontrolü.
 
 Tam fabrika veri seti, kontrol kitapçığı, model ağırlıkları ve üçüncü taraf Dinomaly deposu paylaşılmıyor. Orijinal yerel proje değiştirilmedi.

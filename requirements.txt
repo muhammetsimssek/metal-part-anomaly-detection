@@ -1,6 +1,2 @@
-torch
-torchvision
-numpy
-opencv-python
-Pillow
-tqdm
+# Reproducible CPU environment; see docs/VALIDATION.md.
+-r requirements-lock.txt

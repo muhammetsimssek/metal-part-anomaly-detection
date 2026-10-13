@@ -56,6 +56,7 @@ TTA_REDUCE = "mean"
 BLUR_KERNEL = 3
 
 DEVICE = torch.device("cpu")
+DINO_HUB_REF = "7764ea0f912e53c92e82eb78a2a1631e92725fc8"
 
 # ============================================================
 class DinoV2PatchCoreV4:
@@ -73,7 +74,10 @@ class DinoV2PatchCoreV4:
 
     def load_model(self):
         print(f"Model yükleniyor: {self.model_name}")
-        self.backbone = torch.hub.load('facebookresearch/dinov2', self.model_name)
+        self.backbone = torch.hub.load(
+            f'facebookresearch/dinov2:{DINO_HUB_REF}', self.model_name,
+            trust_repo=True,
+        )
         self.backbone.to(DEVICE).eval()
 
     @torch.no_grad()

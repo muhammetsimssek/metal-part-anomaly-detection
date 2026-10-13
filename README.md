@@ -50,7 +50,7 @@ python run.py full-memory
 python run.py dinov2
 ```
 
-The launcher checks that input images are present before starting an experiment. Both original experiment scripts use CPU inference and download pretrained models on first use. Full reference memory can require substantial RAM. Dependencies are listed, but historical versions were not recorded and a fresh-environment full inference run has not been revalidated for publication.
+The launcher checks that input images are present before starting an experiment. Both original experiment scripts use CPU inference and download pretrained models on first use. Full reference memory can require substantial RAM. Dependencies are pinned in `requirements-lock.txt`. Both pretrained models completed a clean-environment CPU integration run on a small private image subset; see [validation details](docs/VALIDATION.md). Historical dependency versions remain unknown.
 
 ## Results and scope
 
@@ -63,13 +63,14 @@ Scores are not defect probabilities. The two methods have different score scales
 ## Repository structure
 
 ```text
-experiments/       Original Full Memory and DINOv2 experiment scripts
+experiments/       Full Memory and DINOv2 experiment scripts
 assets/            Selected stored comparison images
 docs/              Setup, method notes and presentation
 tools/             Repository validation without model downloads
 .github/workflows/ Automated source-syntax and documentation checks
 run.py             Input checks and experiment launcher
-requirements.txt   Model and image-processing dependencies
+requirements.txt   Entry point for the pinned CPU dependency lockfile
+requirements-lock.txt Validated direct and transitive package versions
 ```
 
 The full factory dataset, inspection booklet, model weights and third-party Dinomaly source are excluded. The original local project was preserved.
