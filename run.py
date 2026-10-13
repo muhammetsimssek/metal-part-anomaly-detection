@@ -10,6 +10,7 @@ SCRIPTS = {
     'dinov2': 'dinov2_patchcore_v4.py',
 }
 EXTENSIONS = {'.jpg', '.jpeg', '.png', '.bmp'}
+SUPPORTED_SUFFIXES = EXTENSIONS | {extension.upper() for extension in EXTENSIONS}
 
 
 def main():
@@ -18,7 +19,7 @@ def main():
     args = parser.parse_args()
     for name in ('train_data', 'test_data'):
         folder = ROOT / name
-        images = [p for p in folder.iterdir() if p.is_file() and p.suffix.lower() in EXTENSIONS] if folder.is_dir() else []
+        images = [p for p in folder.iterdir() if p.is_file() and p.suffix in SUPPORTED_SUFFIXES] if folder.is_dir() else []
         if not images:
             parser.error(f'{name}/ contains no supported images. See docs/SETUP.md.')
     script = ROOT / 'experiments' / SCRIPTS[args.method]

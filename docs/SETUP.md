@@ -30,7 +30,7 @@ metal-part-anomaly-detection/
   run.py                     # input checks and experiment launcher
 ```
 
-Supported file extensions: JPG, JPEG, PNG and BMP. Use one consistent part type and camera setup, with separate reference/test captures. Start with a small number of readable RGB photographs. Both folders must contain images before running a script. Do not use the comparison boards as input: they already contain text and heatmap overlays.
+Supported file extensions: `.jpg`, `.jpeg`, `.png`, `.bmp` and their fully uppercase equivalents. Rename mixed-case extensions such as `.Jpg` before running the original experiments. Use one consistent part type and camera setup, with separate reference/test captures. Start with a small number of readable RGB photographs. Both folders must contain images before running a script. Do not use the comparison boards as input: they already contain text and heatmap overlays.
 
 The factory's full reference/test dataset and inspection booklet are intentionally excluded. The repository provides selected visual results for reviewing the work.
 

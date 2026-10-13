@@ -1,5 +1,7 @@
 # Metal Parçalarda Görsel Anomali Analizi
 
+[![Depo kontrolleri](https://github.com/muhammetsimssek/metal-part-anomaly-detection/actions/workflows/repository-checks.yml/badge.svg)](https://github.com/muhammetsimssek/metal-part-anomaly-detection/actions/workflows/repository-checks.yml)
+
 **Python · PyTorch · OpenCV · PatchCore · DINOv2**
 
 Bir fabrikanın metal parça kontrolü ihtiyacı için geliştirdiğim bilgisayarlı görü prototipi. Hazır özellik çıkarıcıları ve referans özellik belleği kullanarak yeni görüntülerdeki farklı bölgeleri anomali skoru ve ısı haritalarıyla gösterir.

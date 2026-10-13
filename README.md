@@ -1,5 +1,7 @@
 # Metal Part Anomaly Detection
 
+[![Repository checks](https://github.com/muhammetsimssek/metal-part-anomaly-detection/actions/workflows/repository-checks.yml/badge.svg)](https://github.com/muhammetsimssek/metal-part-anomaly-detection/actions/workflows/repository-checks.yml)
+
 **Python · PyTorch · OpenCV · PatchCore · DINOv2**
 
 A computer vision prototype developed for a factory's metal-part inspection need. It uses pretrained feature extractors and reference memory banks to highlight visual differences and produce anomaly-score heatmaps.
