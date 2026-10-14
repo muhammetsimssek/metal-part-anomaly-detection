@@ -19,7 +19,7 @@ A computer vision prototype developed for a factory's metal-part inspection need
 - Produced image-level anomaly scores and heatmap overlays.
 - Investigated how surface marks, shape differences and inspection markings affect each approach.
 
-My contribution is the anomaly-analysis implementation and experiments. A teammate's separate hole-diameter measurement work is outside this repository. The pretrained research models are credited below.
+
 
 ## Pipeline
 
